@@ -8,5 +8,7 @@ public class LightColorDetectorDemo {
         Scanner input = new Scanner(System.in);
         System.out.print("Input wave length: ");
         System.out.println(light.detect(input.nextInt()));
+        LightColorDetectorTest print = new LightColorDetectorTest();
+        print.testItSelf();
     }
 }
