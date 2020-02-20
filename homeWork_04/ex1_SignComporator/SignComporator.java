@@ -2,13 +2,17 @@ package ex1_SignComporator;
 
 public class SignComporator {
 
+    final String negative = "Number is negative";
+    final String positive = "Number is Positive";
+    final String zero = "Number is equals zero";
+
     public String compare (int number) {
         if (number < 0) {
-            return "Number is negative";
+            return negative;
         } else if (number > 0) {
-            return "Number is positive";
+            return positive;
         } else if (number == 0) {
-            return "Number is equals zero";
+            return zero;
         } else {
             return "WTF is this?";
         }
