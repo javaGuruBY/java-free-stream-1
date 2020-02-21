@@ -7,7 +7,7 @@ public class Product {
     double result;
 
      double actualPrice(){
-        result = regularPrice - (regularPrice*discont) / 100 ;
+        result = regularPrice - (regularPrice*discont)/100 ;
         return result;
 
     }
