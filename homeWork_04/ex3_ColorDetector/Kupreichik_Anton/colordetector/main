@@ -1,0 +1,54 @@
+package com.company;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Scanner;
+
+class LightColorDetector {
+    int wavelength;
+    void setWavelength(int color_)
+    {
+        this.wavelength = color_;
+    }
+    void detect(){
+        if((380 <= wavelength) & (wavelength <= 449)) {
+            System.out.println("Violet");
+        }
+        if((450 <= wavelength) & (wavelength <= 494)) {
+            System.out.println("Blue");
+        }
+        if((495 <= wavelength) & (wavelength <= 569)) {
+            System.out.println("Green");
+        }
+        if((570 <= wavelength) & (wavelength <= 589)) {
+            System.out.println("Yellow");
+        }
+        if((590 <= wavelength) & (wavelength <= 619)) {
+            System.out.println("Violet");
+        }
+        if((620 <= wavelength) & (wavelength <= 750)) {
+            System.out.println("Red");
+        }
+        if((751 < wavelength) | (wavelength < 380)) {
+            System.out.println("Invisible Light");
+        }
+
+    }
+}
+
+
+public class main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int color = -1;
+        LightColorDetector Light = new LightColorDetector();
+        while((color != 0)) {
+            color = 0;
+            System.out.println("Введите диапазон");
+            color = in.nextInt();
+            Light.setWavelength(color);
+            Light.detect();
+            System.out.println("Нажмите 0 чтобы выйти");
+        }
+    }
+}
+
