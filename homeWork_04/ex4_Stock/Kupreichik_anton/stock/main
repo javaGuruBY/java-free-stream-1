@@ -1,0 +1,42 @@
+package com.company;
+import java.util.Scanner;
+
+class Stock {
+    Stock(String name_,double value_){
+        this.companyName = name_;
+        this.minCost = value_;
+        this.maxCost = value_;
+        this.currentValue = value_;
+    }
+    String companyName;
+    double currentValue;
+    double minCost;
+    double maxCost;
+    void updatePrice(double newMaxCost, double newMinCost, double newCurrentValue){
+        this.maxCost = newMaxCost;
+        this.minCost = newMinCost;
+        this.currentValue = newCurrentValue;
+    }
+    void printInfo(){
+        System.out.println("Компания: " + companyName + " Текущая стоимость: " + currentValue + " Максимальная ст-ть: " + maxCost + " Минимальная ст-ть: "  + minCost);
+    }
+}
+public class main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите название компании");
+        String name_ = in.nextLine();
+        System.out.println("Введите параметр стоимости");
+        double value_ = in.nextDouble();
+        Stock google = new Stock(name_,value_);
+        google.printInfo();
+        System.out.println("Введите новую текущую ст-ть:");
+        double newCurrentValue = in.nextDouble();
+        System.out.println("Введите новую максимальную ст-ть:");
+        double newMaxCost = in.nextDouble();
+        System.out.println("Введите новую минимальную ст-ть:");
+        double newMinValue = in.nextDouble();
+        google.updatePrice(newCurrentValue, newMinValue, newMaxCost);
+        google.printInfo();
+    }
+}
