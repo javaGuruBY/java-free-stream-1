@@ -56,7 +56,7 @@ public class User {
             System.out.println(getUserName() + " has autorised!");
             return true;
         } else {
-            this.tryToLoginCount -= 1;
+            this.tryToLoginCount--;
             System.out.println("Left attempts: " + this.tryToLoginCount + " for user " + userName);
             return false;
         }
