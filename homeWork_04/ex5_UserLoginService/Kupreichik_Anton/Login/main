@@ -1,0 +1,72 @@
+package com.company;
+
+import java.util.Scanner;
+
+class User{
+    User(String login_, String password_){
+        this.login = login_;
+        this.password = password_;
+    }
+    String login;
+    String password;
+    boolean userBlocked = false;
+    int numberOfAttempts = 0;
+    void resetNumberOfAttempts(){
+        this.numberOfAttempts = 0;
+        System.out.println("Кол-тво попыток равно 0");
+    }
+    void blockUser(){
+        this.userBlocked = true;
+        System.out.println("Пользователь заблокирован");
+    }
+};
+
+class UserLoginService {
+    Scanner in = new Scanner(System.in);
+    int breakPoint = -1;
+    String password;
+
+    void setPassword() {
+        System.out.println("Введите ваш пароль:");
+        password = in.nextLine();
+    }
+
+    void login(User user, String password_) {
+        if (user.password.equals(password_))
+        {
+            System.out.println("Вы успешно вошли в систему");
+            user.resetNumberOfAttempts();
+        }
+        else {
+            user.numberOfAttempts++;
+            System.out.println("Неверный пароль. Попробуйте еще. Кол-тво попыток "+ (3-user.numberOfAttempts));
+        }
+        if(user.numberOfAttempts == 3) {
+            user.blockUser();
+        }
+        }
+    }
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("---регистрация пользователья---");
+        System.out.println("Введите ваш логин:");
+        String login_ = in.nextLine();
+        System.out.println("Введите ваш пароль:");
+        String password_ = in.nextLine();
+        User userOne = new User(login_, password_);
+        UserLoginService service = new UserLoginService();
+        System.out.println("---вход---");
+        while(userOne.userBlocked == false)
+        {
+            System.out.println("Введите ваш пароль");
+            String pass = in.nextLine();
+            service.login(userOne, pass);
+            if(userOne.numberOfAttempts == 0)
+                break;
+        }
+    }
+}
