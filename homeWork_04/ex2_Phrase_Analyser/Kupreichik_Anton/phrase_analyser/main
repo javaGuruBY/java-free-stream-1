@@ -1,0 +1,29 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String firstLine = "It stands no chance";
+        String secondLine = "It could be worse";
+        String thirdLine = "It is fine, really";
+        String make = "Make";
+        String greatAgain = "great again";
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter text:");
+        String text = in.nextLine();
+        boolean start, end;
+        if (start = text.startsWith(make)) {
+            if (end = text.endsWith(greatAgain)) {
+                System.out.println(firstLine);
+            }
+            else System.out.println(secondLine);
+        } else {
+            if (end = text.endsWith(greatAgain)) {
+                System.out.println(secondLine);
+                return;
+            }
+            System.out.println(thirdLine);
+        }
+    }
+}
