@@ -1,6 +1,6 @@
 package ex4_Stock;
 
-public class StockTest {
+public class StockDemo {
     public static void main(String[] args) {
         Stock google = new Stock("Google", 100);
         google.updatePrice(1100);
