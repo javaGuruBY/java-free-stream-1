@@ -27,6 +27,6 @@ public class Stock {
 
     public void printInformation() {
         System.out.print("Company " + this.name + ". Actual price: " + this.actualPrice);
-        System.out.println(". Min / Max Price is: " + this.minPrice + " / " + this.maxPrice);
+        System.out.println(". Min | Max Price is: " + this.minPrice + " | " + this.maxPrice);
         }
 }
