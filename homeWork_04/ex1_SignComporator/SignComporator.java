@@ -13,8 +13,7 @@ public class SignComporator {
             return positive;
         } else if (number == 0) {
             return zero;
-        } else {
-            return "WTF is this?";
         }
+        return null;
     }
 }
